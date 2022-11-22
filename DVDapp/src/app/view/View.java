@@ -7,7 +7,7 @@ public class View  {
 
     public static boolean isON = true;
 
-    public static String FILE = "DVDapp/src/app/model/dvddata.txt";
+    public static String FILE = "C:\\Users\\Zlatk\\IdeaProjects\\Wiley-Edge-Java\\Week-2-assessment\\DVDapp-ZlatkaCiorica - Original\\DVDapp\\src\\app\\model\\dvddata.txt";
 
     static int choice = 0;
 
@@ -15,8 +15,7 @@ public class View  {
      * Main menu interface and default location from which user can make decisions.
      */
     public static void menu() {
-        // choice hold method returned user input
-      choice = menuAndGet();
+        choice = menuAndGet(); // returned value from method
 
         switch (choice) {
             case 1:
@@ -36,8 +35,10 @@ public class View  {
         }
     }
 
-
-    // Prints Menu options and takes choice input
+    /**
+     * Method displaying instructions to user and readInt()
+     * takes input in range 1-4 options
+     */
     public static int menuAndGet(){
         System.out.println("");
         System.out.println("");
@@ -53,13 +54,15 @@ public class View  {
         return UserActions.readInt("Please type your choice:", 1, 4);
     }
 
-    // Prints submenu Options in Search dvd method
+    /**
+     * sub menu prints instructions
+     */
     public static void options() {
         System.out.println("");
         System.out.println("Would you like to do any changes?");
         System.out.println("_________________________________");
         System.out.println("_________________________________");
-        System.out.println("1. Edit" + "\n" + "2. Delete" + "\n" + "Go Back");
+        System.out.println("1. Edit" + "\n" + "2. Delete" + "\n" + "3. Go Back");
         System.out.println("_________________________________");
         System.out.println("Type choice: ");
         System.out.println("_________________________________");

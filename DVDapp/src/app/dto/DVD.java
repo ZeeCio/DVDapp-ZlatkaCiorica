@@ -11,25 +11,14 @@ public class DVD implements DVDinterface {
     private String studio; // Production Studio
     private String userReview; //User Review
 
-    private ArrayList<DVD> dvds = new ArrayList<>();
+    private static ArrayList<DVD> dvds = new ArrayList<>();
 
     public DVD()
     {
         System.out.println("Couldn't get data");
     }
 
-    // Constructor - exception
-    public DVD(String title, int releasedDate, int mpaa, String directorName, String userReview) {
-        this.title = title;
-        this.releasedDate = releasedDate;
-        this.mpaa = mpaa;
-        this.directorName = directorName;
-        this.userReview = userReview;
-        this.studio = "Unknown";
-        dvds.add(this);
-    }
-
-    // Main constructor
+    // Constructor -
     public DVD(String title, int releasedDate, int mpaa, String directorName, String studio, String userReview) {
         this.title = title;
         this.releasedDate = releasedDate;
@@ -37,7 +26,9 @@ public class DVD implements DVDinterface {
         this.directorName = directorName;
         this.studio = studio;
         this.userReview = userReview;
+        dvds.add(this);
     }
+
 
 
     @Override
@@ -99,5 +90,17 @@ public class DVD implements DVDinterface {
     public void setUserReview(String userReview) {
         this.userReview = userReview;
     }
+
+    /*  public String toString() {
+        return "DVD" +
+                "Title: " + title+ '\'' +
+                ",Release Date: " + releasedDate +
+                ", MPAA: " + mpaa +
+                ", Director:  " + directorName +
+                ", Studio: " + studio +
+                ", Review: " + userReview +
+                '}';
+    }*/
 }
+
 

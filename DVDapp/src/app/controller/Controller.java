@@ -3,7 +3,6 @@ package app.controller;
 import app.view.View;
 
 import static app.dao.Library.*;
-import static app.view.UserActions.getAll;
 
 
 public class Controller {
@@ -11,13 +10,14 @@ public class Controller {
 
     public static void main(String args[]) {
 
-        // Testing & getData
-        getAll();
+        // getData
+        //getData();
 
         // while true , Calling menu() method from View class
-        View view = new View();
+        View view = new View(); // object type View
 
         while (view.isON) {
+            getData();
             view.menu();
         }
 
@@ -25,6 +25,5 @@ public class Controller {
         writeOnFile();
 
     }
-
 
 }

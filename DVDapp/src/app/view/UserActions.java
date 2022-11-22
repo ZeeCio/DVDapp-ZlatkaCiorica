@@ -11,6 +11,11 @@ import static app.view.View.options;
 
 public class UserActions {
 
+    /**
+     * Method -add new titLe. Print instruction and Gets the input values
+     * after this calls method addDVD with new parameters
+     * and returns menu()
+     */
     public static void addNewTitle() {
 
         Scanner in = new Scanner(System.in);
@@ -30,14 +35,19 @@ public class UserActions {
         menu();
     }
 
+    /**
+     * Method holding removeDVD and menu methods
+     */
     public static void doRemoveDVD(DVD dvd) {
         removeDVD(dvd);
         menu();
     }
 
-
+    /**
+     * Method grouped instructions to user, taking inputs followed by EditDVD()
+     * and returns to multipleDvdOptions(dvd)
+     */
     public static void doEditDVD(DVD dvd) {
-
 
         Scanner in = new Scanner(System.in);
         System.out.println("Leave blank if you don't want to change particular property");
@@ -72,11 +82,11 @@ public class UserActions {
         eachDVDloop();
         System.out.println("________________________");
         menu();
-
     }
 
     /**
-     * Asks for input to search list for DVD Title, then calls the search function and takes user to display page for dvd.
+     * Asks for input to search list for DVD Title,
+     * then calls the search function and takes user to menu .
      */
 
     public static void searchFor() {
@@ -85,13 +95,12 @@ public class UserActions {
         Scanner in = new Scanner(System.in);
         String title = in.nextLine();
         System.out.println(title);
-        DVD dvd = new DVD();
+        DVD dvd;
         try {
-            dvd = searchDVD(title);
+            dvd = searchDVD(title); // called from Library - for each-equals-title
             multipleDvdOptions(dvd);
         } catch (Exception e) {
             System.out.println("Title not found");
-
             menu();
         }
         System.out.println("________________________");
@@ -107,7 +116,6 @@ public class UserActions {
         displayCollection(dvd);
         Scanner in = new Scanner(System.in);
         options();
-
         int choice = in.nextInt();
         switch (choice) {
             case 1:
@@ -123,16 +131,21 @@ public class UserActions {
         menu();
     }
 
-    public static void getAll() {
+  /*public static void getAll() {
         try {
             getData();
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
             System.out.println("File not found");
-
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         menu();
-    }
+    }*/
 
+    /**
+     * method checking if input is valid and in range
+     */
     public static int readInt(String input, int min, int max) {
         int a;
 
